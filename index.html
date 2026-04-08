@@ -4,609 +4,755 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Govindh - Full Stack Mobile & Web Developer</title>
+  <meta content="Full-Stack Mobile & Web Developer | Flutter • Next.js • AI-Assisted Development" name="description">
+  <meta content="Flutter, Next.js, React, Firebase, Supabase, Mobile App Development" name="keywords">
 
-  <title>Govindh - Portfolio</title>
-  <meta name="description" content="Govindh's Portfolio">
-  <meta name="author" content="Govindh Rajan">
-  <meta content="Flutter Developer,Freelancer,Mobile App Developer" name="keywords">
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,900,900i" rel="stylesheet">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+    :root {
+        --color-primary: #2196F3;
+        --color-secondary: #1976D2;
+        --color-accent: #FF6B6B;
+        --color-dark: #1A1A1A;
+        --color-light: #F5F5F5;
+        --color-text: #333;
+        --color-border: #E0E0E0;
+    }
 
-  <!-- =======================================================
-  * Template Name: iPortfolio - v2.0.3
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    body {
+        font-family: 'Poppins', sans-serif;
+        color: var(--color-text);
+        background-color: #fff;
+        line-height: 1.6;
+    }
+
+    /* Navigation */
+    .navbar {
+        background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+    }
+
+    .navbar-brand {
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: white !important;
+        letter-spacing: 1px;
+    }
+
+    .nav-link {
+        color: rgba(255, 255, 255, 0.9) !important;
+        font-weight: 500;
+        margin: 0 0.5rem;
+        transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+        color: white !important;
+    }
+
+    /* Hero Section */
+    .hero {
+        background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+        color: white;
+        padding: 100px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 20% 50%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 80%, rgba(255, 193, 7, 0.1) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        opacity: 0.95;
+    }
+
+    .hero-desc {
+        font-size: 1rem;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+        opacity: 0.9;
+    }
+
+    .cta-button {
+        display: inline-block;
+        background: var(--color-accent);
+        color: white;
+        padding: 12px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        margin: 0 10px;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    /* About Section */
+    .about {
+        padding: 80px 0;
+        background: var(--color-light);
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 3rem;
+        text-align: center;
+        color: var(--color-primary);
+        position: relative;
+        padding-bottom: 20px;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        width: 80px;
+        height: 4px;
+        background: var(--color-accent);
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+    }
+
+    .about-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #555;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Skills Section */
+    .skills {
+        padding: 80px 0;
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    .skill-card {
+        background: var(--color-light);
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border-left: 4px solid var(--color-primary);
+    }
+
+    .skill-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .skill-card h4 {
+        color: var(--color-primary);
+        margin-bottom: 1rem;
+        font-weight: 600;
+    }
+
+    .skill-card p {
+        color: #666;
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    /* Experience Section */
+    .experience {
+        padding: 80px 0;
+        background: var(--color-light);
+    }
+
+    .experience-item {
+        background: white;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-radius: 10px;
+        border-left: 4px solid var(--color-primary);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s ease;
+    }
+
+    .experience-item:hover {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .experience-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .experience-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--color-primary);
+    }
+
+    .experience-date {
+        background: var(--color-accent);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+
+    .experience-company {
+        color: #666;
+        font-weight: 500;
+        margin-bottom: 1rem;
+    }
+
+    .experience-desc {
+        color: #555;
+        line-height: 1.8;
+    }
+
+    .experience-desc li {
+        margin-bottom: 0.5rem;
+    }
+
+    /* Projects Section */
+    .projects {
+        padding: 80px 0;
+    }
+
+    .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .project-card {
+        background: var(--color-light);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .project-header {
+        background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+        color: white;
+        padding: 1.5rem;
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+    .project-body {
+        padding: 1.5rem;
+    }
+
+    .project-desc {
+        color: #666;
+        margin-bottom: 1rem;
+        line-height: 1.7;
+    }
+
+    .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .tech-badge {
+        background: var(--color-primary);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    /* Education Section */
+    .education {
+        padding: 80px 0;
+        background: var(--color-light);
+    }
+
+    .education-item {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+        border-left: 4px solid var(--color-accent);
+    }
+
+    .education-degree {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--color-primary);
+        margin-bottom: 0.5rem;
+    }
+
+    .education-school {
+        color: #666;
+        margin-bottom: 0.3rem;
+    }
+
+    /* Contact Section */
+    .contact {
+        padding: 80px 0;
+        background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+        color: white;
+        text-align: center;
+    }
+
+    .contact-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+
+    .contact-item {
+        padding: 1.5rem;
+    }
+
+    .contact-item i {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .contact-item h4 {
+        margin-bottom: 0.5rem;
+    }
+
+    /* Footer */
+    .footer {
+        background: var(--color-dark);
+        color: white;
+        padding: 2rem 0;
+        text-align: center;
+    }
+
+    .social-links {
+        margin: 1rem 0;
+    }
+
+    .social-links a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background: var(--color-primary);
+        border-radius: 50%;
+        color: white;
+        text-align: center;
+        line-height: 40px;
+        margin: 0 0.5rem;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    .social-links a:hover {
+        background: var(--color-accent);
+        transform: translateY(-3px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+        }
+
+        .skills-grid,
+        .project-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .highlight {
+        color: var(--color-accent);
+        font-weight: 600;
+    }
+  </style>
 </head>
 
 <body>
-
-  <!-- ======= Mobile nav toggle button ======= -->
-  <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
-
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
-
-      <div class="profile">
-        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Govindh Rajan</a></h1>
-        <div class="social-links mt-3 text-center">
-          <a href="https://www.linkedin.com/in/govindharajan-s-837607103/"  target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-          <a href="https://twitter.com/Govindh163"  target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="https://github.com/govindh163"   target="_blank" class="github"><i class="bx bxl-github"></i></a>
-          <a href="https://t.me/Govindh_raj"   target="_blank" class="telegram"><i class="bx bxl-telegram"></i></a>
-        </div>
-      </div>
-
-      <nav class="nav-menu">
-        <ul>
-          <li class="active"><a href="index.html"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="#portfolio"><i class="bx bx-book-content"></i> Portfolio</a></li>
-          <li><a href="#services"><i class="bx bx-server"></i> Services</a></li>
-          <li><a href="#contact"><i class="bx bx-envelope"></i> Contact</a></li>
-
-        </ul>
-      </nav><!-- .nav-menu -->
-      <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
-
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#home">Govindh</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
     </div>
-  </header><!-- End Header -->
+  </div>
+</nav>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Govindh Rajan</h1>
-<!--      <p>-->
-<!--        <script> document.write(new Date().toLocaleDateString()); </script>-->
-<!--      </p>-->
-      <p>I'm <span class="typed" data-typed-items="Mobile App Developer, Freelancer, Social Thinker,"></span></p>
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Full-Stack Mobile & Web Developer</h1>
+      <p class="hero-subtitle">Flutter • Next.js • AI-Assisted Development</p>
+      <p class="hero-desc">Results-driven developer with 5+ years building production-grade mobile and web applications. Specialized in Flutter, Next.js, and modern backend architectures.</p>
+      <a href="#contact" class="cta-button">Get In Touch</a>
+      <a href="https://govindh163.github.io" class="cta-button" target="_blank">View Portfolio</a>
     </div>
-  </section><!-- End Hero -->
+  </div>
+</section>
 
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>About</h2>
-          <p> I am a full-fledged Flutter app developer who loves to solve problems.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/profil.jfif" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>Mobile App Developer</h3>
-            <p class="font-italic">
-              Focused professional having excellent technical and communication skills, and offering 5 years of experience in Software industry.Proficient in crafting robust test automation frameworks, developing new features, and implementing efficient solutions.
-              Skilled at problem-solving and identifying creative approaches to complex engineering challenges.
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong> 16 March 1998</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Skills:</strong> Flutter,Firebase</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong> https://t.me/Govindh_raj  <a href="https://t.me/Govindh_raj"   target="_blank" class="telegram"><i class="bx bxl-telegram"></i></a></li>
-                  <li><i class="icofont-rounded-right"></i> <strong>City:</strong> Thanjavur,India</li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="icofont-rounded-right"></i> <strong>Age:</strong>25</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Degree:</strong> Bachelors</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Email:</strong> govindh163@outlook.com</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong> Available</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
+<!-- About Section -->
+<section class="about" id="about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <p class="about-text">
+          I'm a <span class="highlight">full-stack developer</span> passionate about creating elegant solutions to complex problems. With 5+ years of professional experience, I've successfully shipped production-grade applications across mobile and web platforms.
+        </p>
+        <p class="about-text">
+          My expertise spans <span class="highlight">Flutter (iOS/Android)</span>, <span class="highlight">Next.js/React</span>, and modern backend architectures including <span class="highlight">Firebase</span>, <span class="highlight">Supabase</span>, and <span class="highlight">AWS</span>. I specialize in rapid product development using lean methodologies and AI-assisted workflows.
+        </p>
+        <p class="about-text">
+          Currently working as a <span class="highlight">Software Engineer – Full Stack</span> at God's Cleaning Crew (Toronto), leading infrastructure migrations and building scalable applications. I'm committed to writing maintainable code, following clean architecture principles, and delivering exceptional user experiences.
+        </p>
       </div>
-    </section><!-- End About Section -->
+    </div>
+  </div>
+</section>
 
-    <!-- ======= Facts Section ======= -->
-    <section id="facts" class="facts">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Facts</h2>
-          <p>
-            To provide best quality, commitment & communication to our clients!
-          </p>
-        </div>
-
-        <div class="row no-gutters">
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
-            <div class="count-box">
-              <i class="icofont-simple-smile"></i>
-              <span data-toggle="counter-up">25</span>
-              <p><strong>Happy Clients</strong> World Wide</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="count-box">
-              <i class="icofont-document-folder"></i>
-              <span data-toggle="counter-up">20</span>
-              <p><strong>Projects</strong> On Time Delivery</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="count-box">
-              <i class="icofont-live-support"></i>
-              <span data-toggle="counter-up">1,455</span>
-              <p><strong>Hours Of Support</strong> Time is Valuable</p>
-            </div>
-          </div>
-        </div>
-
+<!-- Skills Section -->
+<section class="skills" id="skills">
+  <div class="container">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h4><i class="fas fa-mobile-alt"></i> Mobile Development</h4>
+        <p>Flutter, Dart, iOS (Swift/Xcode), Android (Kotlin), Flutter Web, Cross-platform deployment</p>
       </div>
-    </section><!-- End Facts Section -->
-
-    <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Skills</h2>
-          <p>
-            To ensure smooth project execution, I leverage tools like Trello, Jira for effective task management and collaborative workflows, slack for communicating efficiently within teams.
-            Beyond technical expertise, I'm committed to delivering well-documented, maintainable code adhering to clean coding principles.
-            I thrive in fast-paced teams, effectively collaborating with designers and product managers to create exceptional user experiences and constantly seeking to stay updated with the latest trends and advancements in the flutter ecosystem.
-        </div>
-
-        <div class="row skills-content">
-
-          <div class="col-lg-6" data-aos="fade-up">
-
-            <div class="progress">
-              <span class="skill">Flutter SDK <i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">E-Commerce Development  <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Google Firebase(Notification Messaging,Cloud Firestore,Firebase DB) <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="progress">
-              <span class="skill">Google Api Integrations(Maps,Social Authentication) <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">State Management (Provider,Bloc,GetX) <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">UI/UX Design <i class="val">85%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
+      <div class="skill-card">
+        <h4><i class="fas fa-globe"></i> Web Development</h4>
+        <p>Next.js, React, TypeScript, JavaScript, HTML/CSS, Responsive Design, Vercel deployment</p>
       </div>
-    </section><!-- End Skills Section -->
-
-    <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Resume</h2>
-          <p>
-            Throughout my career, I've successfully led the development, deployment, and maintenance of 15+ applications,across diverse domains, including e-commerce, entertainment, transportation & educational apps.
-            My expertise extends to customizing codecanyon scripts, creating customized packages and plugin to enhance app usability.
-          </p>
-
-          <p>
-            I love to consider about myself as a greatness with these workflow.
-            Develop a realistic and complete strategy,
-            choose your tools according to your demands,
-            use version control strategically,
-            consider automation workflows for your project,
-            stay on top of changes and follow them timely.
-          </p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up">
-            <h3 class="resume-title">Summary</h3>
-            <div class="resume-item pb-0">
-              <h4>Govindh Rajan</h4>
-              <p><em>Innovative and deadline-driven Mobile App Developer with 5+ years of experience designing and developing user-centered software solutions from initial concept to final, polished deliverable.</em></p>
-              <ul>
-                <li>Chennai,India</li>
-                <li>https://t.me/Govindh_raj  <a href="https://t.me/Govindh_raj"   target="_blank" class="telegram"><i class="bx bxl-telegram"></i></a></li>
-                <li>govindh163@outlook.com </li>
-              </ul>
-            </div>
-
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Bachelor of Engineering</h4>
-              <h5>2015 - 2019</h5>
-              <p><em>Jeppiaar Institute of Technology, Chennai, Tamilnadu</em></p>
-              <p>With about 75.5% Marks Aggregate</p>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Software Engineer</h4>
-              <h5>MAY 2022 - Oct 2024</h5>
-              <p><em>ManekTech Solutions,Ahmedabad,Gujarat,India </em></p>
-              <ul>
-                <li>Developed the Airport Transfer Booking App, deployed it to both the Stores.</li>
-                <li>Developed the client and staff portal flutter web app and deployed it for internal users.</li>
-                <li>Responsible for the design, develop, deployment, and maintenance of applications on the Google Play Console and Apple Store & client communications.</li>
-                <li>Support or manage the past-worked projects. Experience in performance optimization, code reviews, and refactoring.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Mobile App Developer</h4>
-              <h5>JUN 2019 - APR 2022</h5>
-              <p><em>Smartiapps Technologies,Chennai, India </em></p>
-              <ul>
-                <li>Lead in the design, development, and implementation of the design, layout, and production communication materials</li>
-                <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project. </li>
-                <li>Supervise the assessment of all Mobile Development materials in order to ensure quality and accuracy of the design</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
+      <div class="skill-card">
+        <h4><i class="fas fa-cloud"></i> Backend & Cloud</h4>
+        <p>Firebase, Supabase (PostgreSQL), AWS, Node.js, REST APIs, GraphQL, Cloud Functions</p>
       </div>
-    </section><!-- End Resume Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Portfolio</h2>
-          <p> With about 5 Years of Expertise in Mobile App Development,I had published about 12 Apps to Playstore and 2 Apps to AppsStores</p>
-        </div>
-
-        <div class="row" data-aos="fade-up">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/ezslogo.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/ezslogo.png" data-gall="portfolioGallery" class="venobox" title="EZ Shuttle"><i class="bx bx-plus"></i></a>
-                <a href=https://play.google.com/store/apps/details?id=za.co.ezshuttlegetanez&hl=en_IN target="_blank" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-1.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/ez.webp" data-gall="portfolioGallery" class="venobox" title="Arshis"><i class="bx bx-plus"></i></a>
-              <!-- <a href=https://play.google.com/store/apps/details?id=com.arshis.app target="_blank" title="More Details"><i class="bx bx-link"></i></a> -->
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-5.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-5.png" data-gall="portfolioGallery" class="venobox" title="AutoKaar App"><i class="bx bx-plus"></i></a>
-                <!-- <a href=https://play.google.com/store/apps/details?id=com.smartiapps.autokaar target="_blank" title="More Details"><i class="bx bx-link"></i></a> -->
-              </div>
-            </div>
-          </div>
-
-
-<!--          <div class="col-lg-4 col-md-6 portfolio-item filter-web">-->
-<!--            <div class="portfolio-wrap">-->
-<!--              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">-->
-<!--              <div class="portfolio-links">-->
-<!--                <a href="assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>-->
-<!--                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-
-        </div>
-
+      <div class="skill-card">
+        <h4><i class="fas fa-puzzle-piece"></i> State Management</h4>
+        <p>Provider, GetX, BloC, Riverpod, MobX, Redux patterns for scalable architectures</p>
       </div>
-    </section><!-- End Portfolio Section -->
-
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Services</h2>
-          <p>
-            I've been working on Flutter projects for the last five years, using almost any related technology:
-            Google Maps, Web Services,Rest API & GraphQl Integration,Social Media Integrations,Payment Gateway Integrations, Bluetooth MQTT protocol,
-            Push Notifications, Core Data/SQLite databases, Augmented Reality, QR code/Barcodes handling, etc.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <div class="icon"><i class="icofont-computer"></i></div>
-            <h4 class="title"><a href="">E-commerce App Development</a></h4>
-            <p class="description">A End to end E-Commerce App Solution</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="icofont-chart-bar-graph"></i></div>
-            <h4 class="title"><a href="">Movie/Video Subscription App Development</a></h4>
-            <p class="description">A Complete solution for Movie/Video Portal</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon"><i class="icofont-earth"></i></div>
-            <h4 class="title"><a href="">Integration of Third Party Libraries to Apps</a></h4>
-            <p class="description">Google Maps API,Admob Integration,Firebase,Push Messages.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon"><i class="icofont-image"></i></div>
-            <h4 class="title"><a href="">UI/UX Development</a></h4>
-            <p class="description">A interactive/definitive Screen Layout as  per Your Requirement</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i class="icofont-settings"></i></div>
-            <h4 class="title"><a href=""> Integration of Social Apps Authentication</a></h4>
-            <p class="description">Google sign-in,Facebook Sign-in,Apple Sign-in,Phone Authentication </p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon"><i class="icofont-tasks-alt"></i></div>
-            <h4 class="title"><a href="">Bug Fixing</a></h4>
-            <p class="description"> Can Able to help to fix the bugs lying on dependencies,code errors,etc..,</p>
-          </div>
-        </div>
-
+      <div class="skill-card">
+        <h4><i class="fas fa-tools"></i> Development Tools</h4>
+        <p>Git/GitHub, VS Code, Android Studio, Xcode, Postman, DevTools, CI/CD pipelines</p>
       </div>
-    </section><!-- End Services Section -->
-
-    <!-- ======= Testimonials Section ======= -->
-<!--    <section id="testimonials" class="testimonials section-bg">-->
-<!--      <div class="container">-->
-
-<!--        <div class="section-title">-->
-<!--          <h2>Testimonials</h2>-->
-<!--          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>-->
-<!--        </div>-->
-
-<!--        <div class="owl-carousel testimonials-carousel">-->
-
-<!--          <div class="testimonial-item" data-aos="fade-up">-->
-<!--            <p>-->
-<!--              <i class="bx bxs-quote-alt-left quote-icon-left"></i>-->
-<!--              Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.-->
-<!--              <i class="bx bxs-quote-alt-right quote-icon-right"></i>-->
-<!--            </p>-->
-<!--            <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">-->
-<!--            <h3>Saul Goodman</h3>-->
-<!--            <h4>Ceo &amp; Founder</h4>-->
-<!--          </div>-->
-
-<!--          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">-->
-<!--            <p>-->
-<!--              <i class="bx bxs-quote-alt-left quote-icon-left"></i>-->
-<!--              Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.-->
-<!--              <i class="bx bxs-quote-alt-right quote-icon-right"></i>-->
-<!--            </p>-->
-<!--            <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">-->
-<!--            <h3>Sara Wilsson</h3>-->
-<!--            <h4>Designer</h4>-->
-<!--          </div>-->
-
-<!--          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">-->
-<!--            <p>-->
-<!--              <i class="bx bxs-quote-alt-left quote-icon-left"></i>-->
-<!--              Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.-->
-<!--              <i class="bx bxs-quote-alt-right quote-icon-right"></i>-->
-<!--            </p>-->
-<!--            <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">-->
-<!--            <h3>Jena Karlis</h3>-->
-<!--            <h4>Store Owner</h4>-->
-<!--          </div>-->
-
-<!--          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">-->
-<!--            <p>-->
-<!--              <i class="bx bxs-quote-alt-left quote-icon-left"></i>-->
-<!--              Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.-->
-<!--              <i class="bx bxs-quote-alt-right quote-icon-right"></i>-->
-<!--            </p>-->
-<!--            <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">-->
-<!--            <h3>Matt Brandon</h3>-->
-<!--            <h4>Freelancer</h4>-->
-<!--          </div>-->
-
-<!--          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">-->
-<!--            <p>-->
-<!--              <i class="bx bxs-quote-alt-left quote-icon-left"></i>-->
-<!--              Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.-->
-<!--              <i class="bx bxs-quote-alt-right quote-icon-right"></i>-->
-<!--            </p>-->
-<!--            <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">-->
-<!--            <h3>John Larson</h3>-->
-<!--            <h4>Entrepreneur</h4>-->
-<!--          </div>-->
-
-<!--        </div>-->
-
-<!--      </div>-->
-<!--    </section>&lt;!&ndash; End Testimonials Section &ndash;&gt;-->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p>  </p>
-        </div>
-
-        <div class="row" data-aos="fade-in">
-
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
-              <div class="address">
-                <i class="icofont-google-map"></i>
-                <h4>Location:</h4>
-                <p>Chennai,Tamilnadu</p>
-              </div>
-
-              <div class="email">
-                <i class="icofont-envelope"></i>
-                <h4>Email:</h4>
-                <p>govindhraju163@gmail.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="icofont-phone"><a href="https://t.me/Govindh_raj" target="_blank"></a></i>
-                <h4>Call:</h4>
-                <a href="https://t.me/Govindh_raj" target="_blank">  https://t.me/Govindh_raj </a>
-              </div>
-
-              <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.432533975159!2d79.27060374429658!3d10.930663305549025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baace6169453637%3A0xdf7a0cc56184920a!2zMTDCsDU1JzUwLjciTiA3OcKwMTYnMjAuMyJF!5e0!3m2!1sen!2sin!4v1612329481279!5m2!1sen!2sin"
-                     frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
-            </div>
-
-          </div>
-
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                  <div class="validate"></div>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
-                  <div class="validate"></div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                <div class="validate"></div>
-              </div>
-              <div class="form-group">
-                <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
-                <div class="validate"></div>
-              </div>
-              <div class="mb-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div>
-
-        </div>
-
+      <div class="skill-card">
+        <h4><i class="fas fa-plug"></i> Integrations & APIs</h4>
+        <p>Google APIs, Stripe, Twilio (VoIP/SMS), FCM, Payment Gateways, Third-party SDKs</p>
       </div>
-    </section><!-- End Contact Section -->
+      <div class="skill-card">
+        <h4><i class="fas fa-robot"></i> AI-Assisted Development</h4>
+        <p>Claude Code, Cursor, Perplexity, AI workflows for code acceleration and architecture planning</p>
+      </div>
+      <div class="skill-card">
+        <h4><i class="fas fa-lock"></i> Security & Best Practices</h4>
+        <p>XSS prevention, CSRF protection, IDOR mitigation, Input validation, RLS policies, Performance optimization</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  </main><!-- End #main -->
+<!-- Experience Section -->
+<section class="experience" id="experience">
+  <div class="container">
+    <h2 class="section-title">Professional Experience</h2>
 
-<!--  &lt;!&ndash; ======= Footer ======= &ndash;&gt;-->
-<!--  <footer id="footer">-->
-<!--    <div class="container">-->
-<!--      <div class="copyright">-->
-<!--        &copy; Copyright <strong><span>iPortfolio</span></strong>-->
-<!--      </div>-->
-<!--      <div class="credits">-->
-<!--        &lt;!&ndash; All the links in the footer should remain intact. &ndash;&gt;-->
-<!--        &lt;!&ndash; You can delete the links only if you purchased the pro version. &ndash;&gt;-->
-<!--        &lt;!&ndash; Licensing information: https://bootstrapmade.com/license/ &ndash;&gt;-->
-<!--        &lt;!&ndash; Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ &ndash;&gt;-->
-<!--        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </footer>&lt;!&ndash; End  Footer &ndash;&gt;-->
+    <div class="experience-item">
+      <div class="experience-header">
+        <div>
+          <h3 class="experience-title">Software Engineer – Full Stack</h3>
+          <p class="experience-company"><i class="fas fa-building"></i> God's Cleaning Crew (GCC) | Toronto, Ontario, Canada (Remote)</p>
+        </div>
+        <span class="experience-date">November 2024 – Present</span>
+      </div>
+      <ul class="experience-desc">
+        <li><strong>Led Firebase to Supabase migration</strong> - Orchestrated complete backend migration (Auth, Firestore→PostgreSQL, Cloud Functions→Edge Functions, Storage) using Claude Code for architecture planning and code generation, reducing operational costs and improving query performance</li>
+        <li><strong>Built Next.js client application</strong> - Developed production-grade web app with booking workflows, Stripe payment integration, authentication, and responsive UI deployed on Vercel</li>
+        <li><strong>Native mobile apps development</strong> - Built iOS/Android apps using Flutter with role-based navigation, real-time features, backend API integration leveraging AI-assisted development</li>
+        <li><strong>Security hardening</strong> - Implemented XSS prevention, CSRF protection, input validation, and Row Level Security (RLS) policies across web and mobile platforms</li>
+        <li><strong>End-to-end deployment</strong> - Managed complete deployment pipeline from prototype to production using Git, testing frameworks, and issue tracking via Trello</li>
+      </ul>
+    </div>
 
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+    <div class="experience-item">
+      <div class="experience-header">
+        <div>
+          <h3 class="experience-title">Software Engineer</h3>
+          <p class="experience-company"><i class="fas fa-building"></i> ManekTech Solutions | Ahmedabad, Gujarat, India (Remote)</p>
+        </div>
+        <span class="experience-date">May 2022 – October 2024</span>
+      </div>
+      <ul class="experience-desc">
+        <li><strong>Airport Transfer Booking App</strong> - Developed and deployed production app to Google Play Store and Apple App Store with Firebase Cloud Messaging (FCM) for push notifications</li>
+        <li><strong>Flutter Web application</strong> - Built client/staff portal for booking management system deployed for internal business operations</li>
+        <li><strong>Client communications & deployment</strong> - Owned end-to-end responsibility for technical design, debugging, deployment, and ongoing maintenance across app stores</li>
+        <li><strong>Advanced integrations</strong> - Integrated VideoSDK livestream, Agora audio/video calling, and BLE MQTT protocol for IoT connectivity</li>
+        <li><strong>Performance optimization</strong> - Conducted code reviews, large-scale refactoring, and performance enhancements to improve app stability and UX</li>
+      </ul>
+    </div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="assets/vendor/counterup/counterup.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/venobox/venobox.min.js"></script>
-  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
+    <div class="experience-item">
+      <div class="experience-header">
+        <div>
+          <h3 class="experience-title">Mobile App Developer</h3>
+          <p class="experience-company"><i class="fas fa-building"></i> Smartiapps Technologies | Chennai, Tamil Nadu, India (Onsite)</p>
+        </div>
+        <span class="experience-date">October 2019 – May 2022</span>
+      </div>
+      <ul class="experience-desc">
+        <li><strong>5 production applications</strong> - Successfully developed and deployed five mobile applications from concept to production on iOS and Android</li>
+        <li><strong>UI/UX implementation</strong> - Led design, development, and implementation of user-centered layouts and interface systems</li>
+        <li><strong>State management architecture</strong> - Implemented scalable patterns using Provider, BloC, GetX, and MobX for maintainable codebases</li>
+        <li><strong>Cross-functional collaboration</strong> - Worked with designers and product managers to translate business requirements into technical specifications</li>
+        <li><strong>App Store compliance</strong> - Managed version updates, Play Store/App Store compliance, and release cycles</li>
+      </ul>
+    </div>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+    <div class="experience-item">
+      <div class="experience-header">
+        <div>
+          <h3 class="experience-title">Flutter Development Intern</h3>
+          <p class="experience-company"><i class="fas fa-building"></i> Smartiapps Technologies | Chennai, Tamil Nadu, India (Onsite)</p>
+        </div>
+        <span class="experience-date">July 2019 – September 2019</span>
+      </div>
+      <ul class="experience-desc">
+        <li>Collaborated with senior developers to build efficient, scalable, and user-friendly mobile applications</li>
+        <li>Assisted in developing prototypes for client demonstrations and MVP validation</li>
+        <li>Updated legacy Flutter applications to latest SDK versions ensuring compatibility and performance improvements</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
+<!-- Projects Section -->
+<section class="projects" id="projects">
+  <div class="container">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="project-header">God's Cleaning Crew Platform</div>
+        <div class="project-body">
+          <p class="project-desc">Production-grade cleaning services booking platform with mobile apps (iOS/Android) and admin web dashboard. Migrated entire backend from Firebase to Supabase with zero downtime.</p>
+          <p class="project-desc"><strong>Highlights:</strong> Secure payment flows, real-time job tracking, role-based access control, notification systems, performance optimization</p>
+          <div class="tech-stack">
+            <span class="tech-badge">Flutter</span>
+            <span class="tech-badge">Next.js</span>
+            <span class="tech-badge">Supabase</span>
+            <span class="tech-badge">Vercel</span>
+            <span class="tech-badge">Stripe</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">EZShuttle Booking App</div>
+        <div class="project-body">
+          <p class="project-desc">Airport transfer booking application deployed to both app stores with live tracking, payment integration, booking management, and push notifications.</p>
+          <p class="project-desc"><strong>Highlights:</strong> Google Play Store & Apple App Store deployment, FCM push notifications, real-time location tracking, payment gateway integration</p>
+          <div class="tech-stack">
+            <span class="tech-badge">Flutter</span>
+            <span class="tech-badge">Firebase</span>
+            <span class="tech-badge">Google Maps</span>
+            <span class="tech-badge">FCM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">Mr. Autokaar Ride Booking</div>
+        <div class="project-body">
+          <p class="project-desc">Oola/Uber-style ride booking application specifically for auto-rickshaw services with live driver tracking, fare calculation, and ride history.</p>
+          <p class="project-desc"><strong>Highlights:</strong> Real-time location services, dynamic fare calculation, ride history management, driver-user communication</p>
+          <div class="tech-stack">
+            <span class="tech-badge">Flutter</span>
+            <span class="tech-badge">Google Maps APIs</span>
+            <span class="tech-badge">Real-time Database</span>
+            <span class="tech-badge">Firebase</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">Sami Garden E-Commerce</div>
+        <div class="project-body">
+          <p class="project-desc">Indoor decor plants e-commerce application with product catalog, cart management, order tracking, and integrated payment processing.</p>
+          <p class="project-desc"><strong>Highlights:</strong> Product filtering, cart persistence, order management, payment gateway integration, inventory tracking</p>
+          <div class="tech-stack">
+            <span class="tech-badge">Flutter</span>
+            <span class="tech-badge">REST APIs</span>
+            <span class="tech-badge">Payment Gateway</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">Client Portal – Fleet Management</div>
+        <div class="project-body">
+          <p class="project-desc">Internal web application for fleet operators to manage bookings, drivers, vehicles, and operations with real-time data synchronization.</p>
+          <p class="project-desc"><strong>Highlights:</strong> Dashboard analytics, real-time updates, user role management, data export capabilities</p>
+          <div class="tech-stack">
+            <span class="tech-badge">Flutter Web</span>
+            <span class="tech-badge">Firebase</span>
+            <span class="tech-badge">Admin Dashboard</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Education Section -->
+<section class="education" id="education">
+  <div class="container">
+    <h2 class="section-title">Education</h2>
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="education-item">
+          <div class="education-degree">Bachelor of Engineering</div>
+          <div class="education-school"><i class="fas fa-university"></i> Jeppiaar Institute of Technology</div>
+          <div class="education-school">Chennai, Tamil Nadu | 2015 – 2019</div>
+          <p style="color: #666; margin-top: 0.5rem;">Aggregate: 75.5%</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+  <div class="container">
+    <h2 class="section-title" style="color: white;">Get In Touch</h2>
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <h4>Email</h4>
+        <p><a href="mailto:govindh16.dev@gmail.com" style="color: white;">govindh16.dev@gmail.com</a></p>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <h4>Phone</h4>
+        <p><a href="tel:+919345706755" style="color: white;">+91 93457 06755</a></p>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <h4>Location</h4>
+        <p>Chennai, Tamil Nadu, India</p>
+      </div>
+    </div>
+    <div class="social-links">
+      <a href="https://linkedin.com/in/govindh-rajan" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/govindh163" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://govindh163.github.io" target="_blank" title="Portfolio"><i class="fas fa-globe"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 Govindh S. Full-Stack Mobile & Web Developer. All rights reserved.</p>
+    <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 1rem;">Last Updated: March 2026</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+      });
+  });
+
+  // Active nav link on scroll
+  window.addEventListener('scroll', () => {
+      let current = '';
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          if (scrollY >= sectionTop - 200) {
+              current = section.getAttribute('id');
+          }
+      });
+      document.querySelectorAll('.nav-link').forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href').slice(1) === current) {
+              link.classList.add('active');
+          }
+      });
+  });
+</script>
 </body>
 
 </html>
