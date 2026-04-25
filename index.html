@@ -1,430 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Govindh - Full Stack Mobile & Web Developer</title>
   <meta content="Full-Stack Mobile & Web Developer | Flutter • Next.js • AI-Assisted Development" name="description">
   <meta content="Flutter, Next.js, React, Firebase, Supabase, Mobile App Development" name="keywords">
-
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,900,900i" rel="stylesheet">
-
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-
   <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-        --color-primary: #2196F3;
-        --color-secondary: #1976D2;
-        --color-accent: #FF6B6B;
-        --color-dark: #1A1A1A;
-        --color-light: #F5F5F5;
-        --color-text: #333;
-        --color-border: #E0E0E0;
+      --color-primary: #2196F3;
+      --color-secondary: #1976D2;
+      --color-accent: #FF6B6B;
+      --color-dark: #1A1A1A;
+      --color-light: #F5F5F5;
+      --color-text: #333;
+      --color-border: #E0E0E0;
     }
-
-    body {
-        font-family: 'Poppins', sans-serif;
-        color: var(--color-text);
-        background-color: #fff;
-        line-height: 1.6;
-    }
-
-    /* Navigation */
-    .navbar {
-        background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        padding: 1rem 0;
-    }
-
-    .navbar-brand {
-        font-weight: 700;
-        font-size: 1.5rem;
-        color: white !important;
-        letter-spacing: 1px;
-    }
-
-    .nav-link {
-        color: rgba(255, 255, 255, 0.9) !important;
-        font-weight: 500;
-        margin: 0 0.5rem;
-        transition: color 0.3s ease;
-    }
-
-    .nav-link:hover {
-        color: white !important;
-    }
-
-    /* Hero Section */
-    .hero {
-        background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-        color: white;
-        padding: 100px 0;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .hero::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: radial-gradient(circle at 20% 50%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 80%, rgba(255, 193, 7, 0.1) 0%, transparent 50%);
-        pointer-events: none;
-    }
-
-    .hero-content {
-        position: relative;
-        z-index: 1;
-    }
-
-    .hero h1 {
-        font-size: 3rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    }
-
-    .hero-subtitle {
-        font-size: 1.3rem;
-        margin-bottom: 0.5rem;
-        opacity: 0.95;
-    }
-
-    .hero-desc {
-        font-size: 1rem;
-        max-width: 600px;
-        margin: 0 auto 2rem;
-        opacity: 0.9;
-    }
-
-    .cta-button {
-        display: inline-block;
-        background: var(--color-accent);
-        color: white;
-        padding: 12px 30px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        margin: 0 10px;
-    }
-
-    .cta-button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    }
-
-    /* About Section */
-    .about {
-        padding: 80px 0;
-        background: var(--color-light);
-    }
-
-    .section-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 3rem;
-        text-align: center;
-        color: var(--color-primary);
-        position: relative;
-        padding-bottom: 20px;
-    }
-
-    .section-title::after {
-        content: '';
-        position: absolute;
-        width: 80px;
-        height: 4px;
-        background: var(--color-accent);
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 2px;
-    }
-
-    .about-text {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: #555;
-        margin-bottom: 1.5rem;
-    }
-
-    /* Skills Section */
-    .skills {
-        padding: 80px 0;
-    }
-
-    .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-    }
-
-    .skill-card {
-        background: var(--color-light);
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        transition: all 0.3s ease;
-        border-left: 4px solid var(--color-primary);
-    }
-
-    .skill-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    .skill-card h4 {
-        color: var(--color-primary);
-        margin-bottom: 1rem;
-        font-weight: 600;
-    }
-
-    .skill-card p {
-        color: #666;
-        font-size: 0.95rem;
-        line-height: 1.7;
-    }
-
-    /* Experience Section */
-    .experience {
-        padding: 80px 0;
-        background: var(--color-light);
-    }
-
-    .experience-item {
-        background: white;
-        padding: 2rem;
-        margin-bottom: 2rem;
-        border-radius: 10px;
-        border-left: 4px solid var(--color-primary);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-        transition: all 0.3s ease;
-    }
-
-    .experience-item:hover {
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-    }
-
-    .experience-header {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 1rem;
-        flex-wrap: wrap;
-    }
-
-    .experience-title {
-        font-size: 1.3rem;
-        font-weight: 600;
-        color: var(--color-primary);
-    }
-
-    .experience-date {
-        background: var(--color-accent);
-        color: white;
-        padding: 0.3rem 0.8rem;
-        border-radius: 20px;
-        font-size: 0.85rem;
-        font-weight: 600;
-    }
-
-    .experience-company {
-        color: #666;
-        font-weight: 500;
-        margin-bottom: 1rem;
-    }
-
-    .experience-desc {
-        color: #555;
-        line-height: 1.8;
-    }
-
-    .experience-desc li {
-        margin-bottom: 0.5rem;
-    }
-
-    /* Projects Section */
-    .projects {
-        padding: 80px 0;
-    }
-
-    .project-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-    }
-
-    .project-card {
-        background: var(--color-light);
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        transition: all 0.3s ease;
-    }
-
-    .project-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    }
-
-    .project-header {
-        background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-        color: white;
-        padding: 1.5rem;
-        font-size: 1.3rem;
-        font-weight: 600;
-    }
-
-    .project-body {
-        padding: 1.5rem;
-    }
-
-    .project-desc {
-        color: #666;
-        margin-bottom: 1rem;
-        line-height: 1.7;
-    }
-
-    .tech-stack {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
-
-    .tech-badge {
-        background: var(--color-primary);
-        color: white;
-        padding: 0.3rem 0.8rem;
-        border-radius: 15px;
-        font-size: 0.8rem;
-        font-weight: 600;
-    }
-
-    /* Education Section */
-    .education {
-        padding: 80px 0;
-        background: var(--color-light);
-    }
-
-    .education-item {
-        background: white;
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-        border-left: 4px solid var(--color-accent);
-    }
-
-    .education-degree {
-        font-size: 1.3rem;
-        font-weight: 600;
-        color: var(--color-primary);
-        margin-bottom: 0.5rem;
-    }
-
-    .education-school {
-        color: #666;
-        margin-bottom: 0.3rem;
-    }
-
-    /* Contact Section */
-    .contact {
-        padding: 80px 0;
-        background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-        color: white;
-        text-align: center;
-    }
-
-    .contact-info {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 2rem;
-        margin: 2rem 0;
-    }
-
-    .contact-item {
-        padding: 1.5rem;
-    }
-
-    .contact-item i {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    .contact-item h4 {
-        margin-bottom: 0.5rem;
-    }
-
-    /* Footer */
-    .footer {
-        background: var(--color-dark);
-        color: white;
-        padding: 2rem 0;
-        text-align: center;
-    }
-
-    .social-links {
-        margin: 1rem 0;
-    }
-
-    .social-links a {
-        display: inline-block;
-        width: 40px;
-        height: 40px;
-        background: var(--color-primary);
-        border-radius: 50%;
-        color: white;
-        text-align: center;
-        line-height: 40px;
-        margin: 0 0.5rem;
-        transition: all 0.3s ease;
-        text-decoration: none;
-    }
-
-    .social-links a:hover {
-        background: var(--color-accent);
-        transform: translateY(-3px);
-    }
-
-    /* Responsive */
+    body { font-family: 'Poppins', sans-serif; color: var(--color-text); background-color: #fff; line-height: 1.6; }
+    .navbar { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 1rem 0; }
+    .navbar-brand { font-weight: 700; font-size: 1.5rem; color: white !important; letter-spacing: 1px; }
+    .nav-link { color: rgba(255,255,255,0.9) !important; font-weight: 500; margin: 0 0.5rem; transition: color 0.3s ease; }
+    .nav-link:hover { color: white !important; }
+    .hero { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); color: white; padding: 100px 0; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 50%, rgba(255,107,107,0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255,193,7,0.1) 0%, transparent 50%); pointer-events: none; }
+    .hero-content { position: relative; z-index: 1; }
+    .hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+    .hero-subtitle { font-size: 1.3rem; margin-bottom: 0.5rem; opacity: 0.95; }
+    .hero-desc { font-size: 1rem; max-width: 600px; margin: 0 auto 2rem; opacity: 0.9; }
+    .cta-button { display: inline-block; background: var(--color-accent); color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; margin: 0 10px; }
+    .cta-button:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); color: white; }
+    .about { padding: 80px 0; background: var(--color-light); }
+    .section-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem; text-align: center; color: var(--color-primary); position: relative; padding-bottom: 20px; }
+    .section-title::after { content: ''; position: absolute; width: 80px; height: 4px; background: var(--color-accent); bottom: 0; left: 50%; transform: translateX(-50%); border-radius: 2px; }
+    .about-text { font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 1.5rem; }
+    .skills { padding: 80px 0; }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+    .skill-card { background: var(--color-light); padding: 2rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: all 0.3s ease; border-left: 4px solid var(--color-primary); }
+    .skill-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+    .skill-card h4 { color: var(--color-primary); margin-bottom: 1rem; font-weight: 600; }
+    .skill-card p { color: #666; font-size: 0.95rem; line-height: 1.7; }
+    .experience { padding: 80px 0; background: var(--color-light); }
+    .experience-item { background: white; padding: 2rem; margin-bottom: 2rem; border-radius: 10px; border-left: 4px solid var(--color-primary); box-shadow: 0 2px 10px rgba(0,0,0,0.06); transition: all 0.3s ease; }
+    .experience-item:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+    .experience-item.freelance { border-left-color: #9C27B0; }
+    .experience-header { display: flex; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; }
+    .experience-title { font-size: 1.3rem; font-weight: 600; color: var(--color-primary); }
+    .experience-item.freelance .experience-title { color: #9C27B0; }
+    .experience-date { background: var(--color-accent); color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; height: fit-content; }
+    .experience-item.freelance .experience-date { background: #9C27B0; }
+    .freelance-badge { display: inline-block; background: #F3E5F5; color: #9C27B0; padding: 0.2rem 0.7rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-left: 0.5rem; border: 1px solid #9C27B0; }
+    .experience-company { color: #666; font-weight: 500; margin-bottom: 1rem; }
+    .experience-desc { color: #555; line-height: 1.8; }
+    .experience-desc li { margin-bottom: 0.5rem; }
+    .tech-stack-label { font-size: 0.85rem; color: #888; margin-top: 1rem; font-style: italic; }
+    .store-links { display: flex; gap: 0.7rem; margin-top: 1rem; flex-wrap: wrap; }
+    .store-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: all 0.3s ease; }
+    .store-btn-play { background: #01875f; color: white; }
+    .store-btn-apple { background: #1A1A1A; color: white; }
+    .store-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); color: white; }
+    .projects { padding: 80px 0; }
+    .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .project-card { background: var(--color-light); border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: all 0.3s ease; }
+    .project-card:hover { transform: translateY(-8px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+    .project-card.featured { border: 2px solid #9C27B0; }
+    .project-header { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); color: white; padding: 1.5rem; font-size: 1.3rem; font-weight: 600; }
+    .project-card.featured .project-header { background: linear-gradient(135deg, #9C27B0 0%, #6A1B9A 100%); }
+    .project-body { padding: 1.5rem; }
+    .project-desc { color: #666; margin-bottom: 1rem; line-height: 1.7; }
+    .tech-stack { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+    .tech-badge { background: var(--color-primary); color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600; }
+    .project-card.featured .tech-badge { background: #9C27B0; }
+    .education { padding: 80px 0; background: var(--color-light); }
+    .education-item { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); border-left: 4px solid var(--color-accent); }
+    .education-degree { font-size: 1.3rem; font-weight: 600; color: var(--color-primary); margin-bottom: 0.5rem; }
+    .education-school { color: #666; margin-bottom: 0.3rem; }
+    .contact { padding: 80px 0; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); color: white; text-align: center; }
+    .contact-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 2rem 0; }
+    .contact-item { padding: 1.5rem; }
+    .contact-item i { font-size: 2rem; margin-bottom: 1rem; }
+    .contact-item h4 { margin-bottom: 0.5rem; }
+    .footer { background: var(--color-dark); color: white; padding: 2rem 0; text-align: center; }
+    .social-links { margin: 1rem 0; }
+    .social-links a { display: inline-block; width: 40px; height: 40px; background: var(--color-primary); border-radius: 50%; color: white; text-align: center; line-height: 40px; margin: 0 0.5rem; transition: all 0.3s ease; text-decoration: none; }
+    .social-links a:hover { background: var(--color-accent); transform: translateY(-3px); }
+    .highlight { color: var(--color-accent); font-weight: 600; }
     @media (max-width: 768px) {
-        .hero h1 {
-            font-size: 2rem;
-        }
-
-        .hero-subtitle {
-            font-size: 1rem;
-        }
-
-        .section-title {
-            font-size: 2rem;
-        }
-
-        .skills-grid,
-        .project-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    .highlight {
-        color: var(--color-accent);
-        font-weight: 600;
+      .hero h1 { font-size: 2rem; }
+      .hero-subtitle { font-size: 1rem; }
+      .section-title { font-size: 2rem; }
+      .skills-grid, .project-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
-
 <body>
+
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
   <div class="container">
@@ -448,11 +121,10 @@
 <section class="hero" id="home">
   <div class="container">
     <div class="hero-content">
-      <h1>Full-Stack Mobile & Web Developer</h1>
+      <h1>Full-Stack Mobile &amp; Web Developer</h1>
       <p class="hero-subtitle">Flutter • Next.js • AI-Assisted Development</p>
-      <p class="hero-desc">Results-driven developer with 5+ years building production-grade mobile and web applications. Specialized in Flutter, Next.js, and modern backend architectures.</p>
+      <p class="hero-desc">Results-driven developer with 6+ years building production-grade mobile and web applications. Specialized in Flutter, Next.js, and modern backend architectures.</p>
       <a href="#contact" class="cta-button">Get In Touch</a>
-<!--      <a href="https://govindh163.github.io" class="cta-button" target="_blank">View Portfolio</a>-->
     </div>
   </div>
 </section>
@@ -464,13 +136,13 @@
     <div class="row">
       <div class="col-lg-8 mx-auto">
         <p class="about-text">
-          I'm a <span class="highlight">full-stack developer</span> passionate about creating elegant solutions to complex problems. With 5+ years of professional experience, I've successfully shipped production-grade applications across mobile and web platforms.
+          I'm a <span class="highlight">full-stack developer</span> passionate about creating elegant solutions to complex problems. With <span class="highlight">6+ years</span> of professional experience, I've successfully shipped production-grade applications across mobile and web platforms.
         </p>
         <p class="about-text">
           My expertise spans <span class="highlight">Flutter (iOS/Android)</span>, <span class="highlight">Next.js/React</span>, and modern backend architectures including <span class="highlight">Firebase</span>, <span class="highlight">Supabase</span>, and <span class="highlight">AWS</span>. I specialize in rapid product development using lean methodologies and AI-assisted workflows.
         </p>
         <p class="about-text">
-          Currently working as a <span class="highlight">Software Engineer – Full Stack</span> at God's Cleaning Crew (Toronto), leading infrastructure migrations and building scalable applications. I'm committed to writing maintainable code, following clean architecture principles, and delivering exceptional user experiences.
+          Currently working as a <span class="highlight">Software Engineer – Full Stack</span> at God's Cleaning Crew (Toronto) and as a <span class="highlight">Freelance Flutter Developer</span> for Azatecon (Singapore), where I built <em>Aza Hub</em> — a live Global HR &amp; Payroll app on both stores — as the sole dedicated Flutter developer.
         </p>
       </div>
     </div>
@@ -491,7 +163,7 @@
         <p>Next.js, React, TypeScript, JavaScript, HTML/CSS, Responsive Design, Vercel deployment</p>
       </div>
       <div class="skill-card">
-        <h4><i class="fas fa-cloud"></i> Backend & Cloud</h4>
+        <h4><i class="fas fa-cloud"></i> Backend &amp; Cloud</h4>
         <p>Firebase, Supabase (PostgreSQL), AWS, Node.js, REST APIs, GraphQL, Cloud Functions</p>
       </div>
       <div class="skill-card">
@@ -503,15 +175,15 @@
         <p>Git/GitHub, VS Code, Android Studio, Xcode, Postman, DevTools, CI/CD pipelines</p>
       </div>
       <div class="skill-card">
-        <h4><i class="fas fa-plug"></i> Integrations & APIs</h4>
-        <p>Google APIs, Stripe, Twilio (VoIP/SMS), FCM, Payment Gateways, Third-party SDKs</p>
+        <h4><i class="fas fa-plug"></i> Integrations &amp; APIs</h4>
+        <p>Twilio (VoIP/SMS/Web Calling), Stripe, Google APIs, VideoSDK, Agora, FCM, BLE/MQTT</p>
       </div>
       <div class="skill-card">
         <h4><i class="fas fa-robot"></i> AI-Assisted Development</h4>
         <p>Claude Code, Cursor, Perplexity, AI workflows for code acceleration and architecture planning</p>
       </div>
       <div class="skill-card">
-        <h4><i class="fas fa-lock"></i> Security & Best Practices</h4>
+        <h4><i class="fas fa-lock"></i> Security &amp; Best Practices</h4>
         <p>XSS prevention, CSRF protection, IDOR mitigation, Input validation, RLS policies, Performance optimization</p>
       </div>
     </div>
@@ -523,71 +195,110 @@
   <div class="container">
     <h2 class="section-title">Professional Experience</h2>
 
+    <!-- GCC -->
     <div class="experience-item">
       <div class="experience-header">
         <div>
           <h3 class="experience-title">Software Engineer – Full Stack</h3>
-          <p class="experience-company"><i class="fas fa-building"></i> God's Cleaning Crew (GCC) | Toronto, Ontario, Canada (Remote)</p>
+          <p class="experience-company"><i class="fas fa-building"></i> God's Cleaning Crew (GCC) &nbsp;|&nbsp; Toronto, Ontario, Canada (Remote)</p>
         </div>
-        <span class="experience-date">November 2024 – Present</span>
+        <span class="experience-date">Nov 2024 – Present</span>
       </div>
       <ul class="experience-desc">
-        <li><strong>Led Firebase to Supabase migration</strong> - Orchestrated complete backend migration (Auth, Firestore→PostgreSQL, Cloud Functions→Edge Functions, Storage) using Claude Code for architecture planning and code generation, reducing operational costs and improving query performance</li>
-        <li><strong>Built Next.js client application</strong> - Developed production-grade web app with booking workflows, Stripe payment integration, authentication, and responsive UI deployed on Vercel</li>
-        <li><strong>Native mobile apps development</strong> - Built iOS/Android apps using Flutter with role-based navigation, real-time features, backend API integration leveraging AI-assisted development</li>
-        <li><strong>Security hardening</strong> - Implemented XSS prevention, CSRF protection, input validation, and Row Level Security (RLS) policies across web and mobile platforms</li>
-        <li><strong>End-to-end deployment</strong> - Managed complete deployment pipeline from prototype to production using Git, testing frameworks, and issue tracking via Trello</li>
+        <li><strong>Led Firebase → Supabase migration</strong> — Orchestrated complete backend migration (Auth, Firestore→PostgreSQL, Cloud Functions→Edge Functions, Storage) using Claude Code, reducing operational costs and improving query performance</li>
+        <li><strong>Built Next.js client application</strong> — Developed production web app with booking workflows, Stripe payment integration, authentication, and responsive UI deployed on Vercel</li>
+        <li><strong>VoIP Calling App</strong> — Built in-house calling app (Twilio VoIP) on native iOS and Android — incoming/outgoing calls with automated call recording</li>
+        <li><strong>Native mobile apps</strong> — Built iOS/Android apps using Flutter with role-based navigation, real-time features, and backend API integration using AI-assisted development</li>
+        <li><strong>Custom HRM &amp; Sales CRM</strong> — Built HRM suite on Ninety.io and a Sales CRM Dashboard (Next.js + Twilio web calling) with lead pipeline management and stage tracking</li>
+        <li><strong>Security hardening</strong> — XSS prevention, CSRF protection, input validation, and RLS policies in Supabase</li>
+        <li><strong>End-to-end deployment</strong> — Managed complete deployment pipeline from prototype to production using Git, CI/CD, and Trello</li>
       </ul>
+      <p class="tech-stack-label">Tech Stack: Flutter, Next.js, Supabase, Vercel, Stripe, Twilio VoIP, Twilio Web Calling, Freshdesk, Ninety.io, Claude Code, Node.js</p>
     </div>
 
+    <!-- Azatecon -->
+    <div class="experience-item freelance">
+      <div class="experience-header">
+        <div>
+          <h3 class="experience-title">
+            Flutter Developer
+            <span class="freelance-badge"><i class="fas fa-briefcase"></i> Freelance · Part-Time</span>
+          </h3>
+          <p class="experience-company"><i class="fas fa-building"></i> Azatecon &nbsp;|&nbsp; Singapore (Remote)</p>
+        </div>
+        <span class="experience-date">Nov 2024 – Present</span>
+      </div>
+      <ul class="experience-desc">
+        <li><strong>Sole dedicated Flutter developer</strong> for <em>Aza Hub</em> — a live Global HR &amp; Payroll management app published on App Store and Play Store</li>
+        <li><strong>Pixel-perfect UI</strong> — Implemented all screens from Figma designs with precise layout, spacing, and cross-device responsiveness</li>
+        <li><strong>Payroll PDF download</strong> — Built server-side PDF generation, file handling, and download triggers on iOS &amp; Android</li>
+        <li><strong>Document upload flows</strong> — Developed image/file pickers, cloud storage integration, and progress feedback</li>
+        <li><strong>Pay detail popup screens</strong> — Rich payslip breakdown with expandable data components and formatted pay details</li>
+        <li><strong>Full API integration layer</strong> — Architected REST API connections, data models, error handling, and response parsing</li>
+        <li><strong>Firebase FCM</strong> — Integrated push notifications covering payroll alerts and HR updates</li>
+        <li><strong>Architectural decisions</strong> — Owned state management strategy, folder structure, and scalable feature module design</li>
+      </ul>
+      <p class="tech-stack-label">Tech Stack: Flutter, Dart, Firebase FCM, REST APIs, Figma, iOS, Android</p>
+      <div class="store-links">
+        <a href="https://play.google.com/store/apps/details?id=com.azatecon.payroll&hl=en_IN" target="_blank" rel="noopener noreferrer" class="store-btn store-btn-play">
+          <i class="fab fa-google-play"></i> Play Store
+        </a>
+        <a href="https://apps.apple.com/in/app/aza-hub-global-hr-payroll/id6748887473" target="_blank" rel="noopener noreferrer" class="store-btn store-btn-apple">
+          <i class="fab fa-apple"></i> App Store
+        </a>
+      </div>
+    </div>
+
+    <!-- ManekTech -->
     <div class="experience-item">
       <div class="experience-header">
         <div>
           <h3 class="experience-title">Software Engineer</h3>
-          <p class="experience-company"><i class="fas fa-building"></i> ManekTech Solutions | Ahmedabad, Gujarat, India (Remote)</p>
+          <p class="experience-company"><i class="fas fa-building"></i> ManekTech Solutions &nbsp;|&nbsp; Ahmedabad, Gujarat, India (Remote)</p>
         </div>
-        <span class="experience-date">May 2022 – October 2024</span>
+        <span class="experience-date">May 2022 – Oct 2024</span>
       </div>
       <ul class="experience-desc">
-        <li><strong>Airport Transfer Booking App</strong> - Developed and deployed production app to Google Play Store and Apple App Store with Firebase Cloud Messaging (FCM) for push notifications</li>
-        <li><strong>Flutter Web application</strong> - Built client/staff portal for booking management system deployed for internal business operations</li>
-        <li><strong>Client communications & deployment</strong> - Owned end-to-end responsibility for technical design, debugging, deployment, and ongoing maintenance across app stores</li>
-        <li><strong>Advanced integrations</strong> - Integrated VideoSDK livestream, Agora audio/video calling, and BLE MQTT protocol for IoT connectivity</li>
-        <li><strong>Performance optimization</strong> - Conducted code reviews, large-scale refactoring, and performance enhancements to improve app stability and UX</li>
+        <li><strong>Airport Transfer Booking App</strong> — Developed and deployed production app to Google Play Store and Apple App Store with FCM push notifications</li>
+        <li><strong>Flutter Web application</strong> — Built client/staff portal for booking management deployed for internal business operations</li>
+        <li><strong>Client ownership</strong> — Owned end-to-end responsibility for technical design, debugging, deployment, and ongoing maintenance across both app stores</li>
+        <li><strong>Advanced integrations</strong> — Integrated VideoSDK livestream, Agora audio/video calling, and BLE/MQTT for IoT connectivity</li>
+        <li><strong>Performance optimization</strong> — Conducted code reviews, large-scale refactoring, and performance enhancements to improve app stability</li>
       </ul>
     </div>
 
+    <!-- Smartiapps Developer -->
     <div class="experience-item">
       <div class="experience-header">
         <div>
           <h3 class="experience-title">Mobile App Developer</h3>
-          <p class="experience-company"><i class="fas fa-building"></i> Smartiapps Technologies | Chennai, Tamil Nadu, India (Onsite)</p>
+          <p class="experience-company"><i class="fas fa-building"></i> Smartiapps Technologies &nbsp;|&nbsp; Chennai, Tamil Nadu, India (Onsite)</p>
         </div>
-        <span class="experience-date">October 2019 – May 2022</span>
+        <span class="experience-date">Oct 2019 – May 2022</span>
       </div>
       <ul class="experience-desc">
-        <li><strong>5 production applications</strong> - Successfully developed and deployed five mobile applications from concept to production on iOS and Android</li>
-        <li><strong>UI/UX implementation</strong> - Led design, development, and implementation of user-centered layouts and interface systems</li>
-        <li><strong>State management architecture</strong> - Implemented scalable patterns using Provider, BloC, GetX, and MobX for maintainable codebases</li>
-        <li><strong>Cross-functional collaboration</strong> - Worked with designers and product managers to translate business requirements into technical specifications</li>
-        <li><strong>App Store compliance</strong> - Managed version updates, Play Store/App Store compliance, and release cycles</li>
+        <li><strong>5 production apps</strong> — Successfully developed and deployed five mobile applications from concept to production on iOS and Android</li>
+        <li><strong>UI/UX implementation</strong> — Led design, development, and implementation of user-centered layouts and interface systems</li>
+        <li><strong>State management architecture</strong> — Implemented scalable patterns using Provider, BloC, GetX, and MobX in MVVM architecture</li>
+        <li><strong>App Store compliance</strong> — Managed version updates, Play Store/App Store compliance, and release cycles</li>
       </ul>
     </div>
 
+    <!-- Smartiapps Intern -->
     <div class="experience-item">
       <div class="experience-header">
         <div>
           <h3 class="experience-title">Flutter Development Intern</h3>
-          <p class="experience-company"><i class="fas fa-building"></i> Smartiapps Technologies | Chennai, Tamil Nadu, India (Onsite)</p>
+          <p class="experience-company"><i class="fas fa-building"></i> Smartiapps Technologies &nbsp;|&nbsp; Chennai, Tamil Nadu, India (Onsite)</p>
         </div>
-        <span class="experience-date">July 2019 – September 2019</span>
+        <span class="experience-date">Jul 2019 – Sep 2019</span>
       </div>
       <ul class="experience-desc">
-        <li>Collaborated with senior developers to build efficient, scalable, and user-friendly mobile applications</li>
-        <li>Assisted in developing prototypes for client demonstrations and MVP validation</li>
-        <li>Updated legacy Flutter applications to latest SDK versions ensuring compatibility and performance improvements</li>
+        <li>Collaborated with senior developers to build scalable, user-friendly mobile applications and MVP prototypes</li>
+        <li>Updated legacy Flutter apps to latest SDK versions ensuring compatibility and performance improvements</li>
       </ul>
     </div>
+
   </div>
 </section>
 
@@ -596,26 +307,69 @@
   <div class="container">
     <h2 class="section-title">Featured Projects</h2>
     <div class="project-grid">
+
+      <!-- Aza Hub — FEATURED -->
+      <div class="project-card featured">
+        <div class="project-header">
+          <i class="fas fa-star" style="font-size:0.9rem; margin-right:0.4rem;"></i>
+          Aza Hub — Global HR &amp; Payroll App
+        </div>
+        <div class="project-body">
+          <p class="project-desc">Live HR &amp; Payroll management app serving global workforces, published on both stores. Built as the <strong>sole Flutter developer</strong> — pixel-perfect UI from Figma, payroll PDF download, document uploads, pay detail popups, full REST API integration, and Firebase FCM push notifications.</p>
+          <div class="tech-stack">
+            <span class="tech-badge">Flutter</span>
+            <span class="tech-badge">Firebase FCM</span>
+            <span class="tech-badge">REST APIs</span>
+            <span class="tech-badge">Figma</span>
+            <span class="tech-badge">iOS</span>
+            <span class="tech-badge">Android</span>
+          </div>
+          <div class="store-links">
+            <a href="https://play.google.com/store/apps/details?id=com.azatecon.payroll&hl=en_IN" target="_blank" rel="noopener noreferrer" class="store-btn store-btn-play">
+              <i class="fab fa-google-play"></i> Play Store
+            </a>
+            <a href="https://apps.apple.com/in/app/aza-hub-global-hr-payroll/id6748887473" target="_blank" rel="noopener noreferrer" class="store-btn store-btn-apple">
+              <i class="fab fa-apple"></i> App Store
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- GCC Platform -->
       <div class="project-card">
         <div class="project-header">God's Cleaning Crew Platform</div>
         <div class="project-body">
-          <p class="project-desc">Production-grade cleaning services booking platform with mobile apps (iOS/Android) and admin web dashboard. Migrated entire backend from Firebase to Supabase with zero downtime.</p>
-          <p class="project-desc"><strong>Highlights:</strong> Secure payment flows, real-time job tracking, role-based access control, notification systems, performance optimization</p>
+          <p class="project-desc">Production-grade cleaning services platform with mobile apps (iOS/Android) and admin web dashboard. Zero-downtime Firebase → Supabase migration, secure payment flows, real-time job tracking, and role-based access control.</p>
           <div class="tech-stack">
             <span class="tech-badge">Flutter</span>
             <span class="tech-badge">Next.js</span>
             <span class="tech-badge">Supabase</span>
             <span class="tech-badge">Vercel</span>
             <span class="tech-badge">Stripe</span>
+            <span class="tech-badge">Claude Code</span>
           </div>
         </div>
       </div>
 
+      <!-- GCC VoIP -->
       <div class="project-card">
-        <div class="project-header">EZShuttle Booking App</div>
+        <div class="project-header">GCC VoIP Calling App</div>
         <div class="project-body">
-          <p class="project-desc">Airport transfer booking application deployed to both app stores with live tracking, payment integration, booking management, and push notifications.</p>
-          <p class="project-desc"><strong>Highlights:</strong> Google Play Store & Apple App Store deployment, FCM push notifications, real-time location tracking, payment gateway integration</p>
+          <p class="project-desc">Custom in-house VoIP calling app on native iOS and Android using Twilio VoIP — incoming/outgoing calls with automated call recording, fully integrated into GCC's production codebase.</p>
+          <div class="tech-stack">
+            <span class="tech-badge">Native iOS</span>
+            <span class="tech-badge">Native Android</span>
+            <span class="tech-badge">Twilio VoIP</span>
+            <span class="tech-badge">Claude Code</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EZShuttle -->
+      <div class="project-card">
+        <div class="project-header">EZShuttle Airport Booking App</div>
+        <div class="project-body">
+          <p class="project-desc">Airport transfer booking app live on both app stores — live tracking, payment integration, booking management, and FCM push notifications.</p>
           <div class="tech-stack">
             <span class="tech-badge">Flutter</span>
             <span class="tech-badge">Firebase</span>
@@ -625,25 +379,24 @@
         </div>
       </div>
 
+      <!-- Mr. Autokaar -->
       <div class="project-card">
         <div class="project-header">Mr. Autokaar Ride Booking</div>
         <div class="project-body">
-          <p class="project-desc">Oola/Uber-style ride booking application specifically for auto-rickshaw services with live driver tracking, fare calculation, and ride history.</p>
-          <p class="project-desc"><strong>Highlights:</strong> Real-time location services, dynamic fare calculation, ride history management, driver-user communication</p>
+          <p class="project-desc">Ola/Uber-style ride booking app for auto-rickshaw services with live driver tracking, dynamic fare calculation, and ride history.</p>
           <div class="tech-stack">
             <span class="tech-badge">Flutter</span>
             <span class="tech-badge">Google Maps APIs</span>
-            <span class="tech-badge">Real-time Database</span>
             <span class="tech-badge">Firebase</span>
           </div>
         </div>
       </div>
 
+      <!-- Sami Garden -->
       <div class="project-card">
-        <div class="project-header">Sami Garden E-Commerce</div>
+        <div class="project-header">Sami Garden E-Commerce App</div>
         <div class="project-body">
-          <p class="project-desc">Indoor decor plants e-commerce application with product catalog, cart management, order tracking, and integrated payment processing.</p>
-          <p class="project-desc"><strong>Highlights:</strong> Product filtering, cart persistence, order management, payment gateway integration, inventory tracking</p>
+          <p class="project-desc">Indoor decor plants e-commerce app with product catalog, cart management, order tracking, and integrated payment processing.</p>
           <div class="tech-stack">
             <span class="tech-badge">Flutter</span>
             <span class="tech-badge">REST APIs</span>
@@ -652,18 +405,6 @@
         </div>
       </div>
 
-      <div class="project-card">
-        <div class="project-header">Client Portal – Fleet Management</div>
-        <div class="project-body">
-          <p class="project-desc">Internal web application for fleet operators to manage bookings, drivers, vehicles, and operations with real-time data synchronization.</p>
-          <p class="project-desc"><strong>Highlights:</strong> Dashboard analytics, real-time updates, user role management, data export capabilities</p>
-          <div class="tech-stack">
-            <span class="tech-badge">Flutter Web</span>
-            <span class="tech-badge">Firebase</span>
-            <span class="tech-badge">Admin Dashboard</span>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -677,8 +418,8 @@
         <div class="education-item">
           <div class="education-degree">Bachelor of Engineering</div>
           <div class="education-school"><i class="fas fa-university"></i> Jeppiaar Institute of Technology</div>
-          <div class="education-school">Chennai, Tamil Nadu | 2015 – 2019</div>
-          <p style="color: #666; margin-top: 0.5rem;">Aggregate: 75.5%</p>
+          <div class="education-school">Chennai, Tamil Nadu &nbsp;|&nbsp; 2015 – 2019</div>
+          <p style="color:#666; margin-top:0.5rem;">Aggregate: 75.5%</p>
         </div>
       </div>
     </div>
@@ -688,21 +429,17 @@
 <!-- Contact Section -->
 <section class="contact" id="contact">
   <div class="container">
-    <h2 class="section-title" style="color: white;">Get In Touch</h2>
+    <h2 class="section-title" style="color:white;">Get In Touch</h2>
     <div class="contact-info">
       <div class="contact-item">
         <i class="fas fa-envelope"></i>
         <h4>Email</h4>
-        <p><a href="mailto:govindh16.dev@gmail.com" style="color: white;">govindh16.dev@gmail.com</a></p>
+        <p><a href="mailto:govindh16.dev@gmail.com" style="color:white;">govindh16.dev@gmail.com</a></p>
       </div>
       <div class="contact-item">
         <i class="fab fa-telegram"></i>
         <h4>Telegram</h4>
-        <p>
-          <a href="https://t.me/Govindh_raj" target="_blank" rel="noopener noreferrer" style="color: white;">
-            @Govindh_raj
-          </a>
-        </p>
+        <p><a href="https://t.me/Govindh_raj" target="_blank" rel="noopener noreferrer" style="color:white;">@Govindh_raj</a></p>
       </div>
       <div class="contact-item">
         <i class="fas fa-map-marker-alt"></i>
@@ -711,7 +448,7 @@
       </div>
     </div>
     <div class="social-links">
-      <a href="https://www.linkedin.com/in/govindharajan-s-837607103" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://linkedin.com/in/govindharajan-s-837607103" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       <a href="https://github.com/govindh163" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
       <a href="https://govindh163.github.io" target="_blank" title="Portfolio"><i class="fas fa-globe"></i></a>
     </div>
@@ -721,42 +458,30 @@
 <!-- Footer -->
 <footer class="footer">
   <div class="container">
-    <p>&copy; 2026 Govindh S. Full-Stack Mobile & Web Developer. All rights reserved.</p>
-    <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 1rem;">Last Updated: March 2026</p>
+    <p>&copy; 2026 Govindh S. Full-Stack Mobile &amp; Web Developer. All rights reserved.</p>
+    <p style="font-size:0.9rem; opacity:0.8; margin-top:1rem;">Last Updated: April 2026</p>
   </div>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 <script>
-  // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-      });
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
   });
-
-  // Active nav link on scroll
   window.addEventListener('scroll', () => {
-      let current = '';
-      const sections = document.querySelectorAll('section');
-      sections.forEach(section => {
-          const sectionTop = section.offsetTop;
-          if (scrollY >= sectionTop - 200) {
-              current = section.getAttribute('id');
-          }
-      });
-      document.querySelectorAll('.nav-link').forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href').slice(1) === current) {
-              link.classList.add('active');
-          }
-      });
+    let current = '';
+    document.querySelectorAll('section').forEach(section => {
+      if (scrollY >= section.offsetTop - 200) current = section.getAttribute('id');
+    });
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href').slice(1) === current) link.classList.add('active');
+    });
   });
 </script>
 </body>
-
 </html>
